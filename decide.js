@@ -72,10 +72,11 @@ window.onload = function() {
         appendChild(del, createTextNode('x'));
         setAttribute(del,'title','Delete this todo item');
         del.onclick = function() {
+            var newid = parseInt(li.children[0].id.substr(6),10);
             li.id = 'todeleteli';
-            var note = $('note_'+id);
+            var note = $('note_'+newid);
             note.id = 'todeletenote';
-            for (var i = id + 1; i < localStorage.length; i++) {
+            for (var i = newid + 1; i < localStorage.length; i++) {
                 localStorage.setItem(i - 1, localStorage.getItem(i));
                 document.getElementById('input_'+i).id = 'input_'+(i-1);
                 document.getElementById('note_'+i).id = 'note_'+(i-1);
