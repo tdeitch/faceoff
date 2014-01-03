@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 1em;
     padding: 5px;
     font-family: Arial;
     font-size: 14pt;
@@ -20,8 +20,8 @@ ul {
     padding: 0;
     list-style: none;
 }
-li.done {
-    color: #999;
+#add_note {
+    margin-top: 0.5em;
 }
 .hidden {
     display: none;
@@ -30,7 +30,4 @@ li.done {
     color: red;
     font-weight: bold;
     margin-left: 0.5em;
-}
-#reorder_form a {
-    margin-left: 1em;
 }
