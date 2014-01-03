@@ -45,15 +45,16 @@ window.onload = function() {
  
     /*read the notes and insert them into the DOM*/
     function listTODOs() {
-        for ( var key in localStorage ) {
-            var val = localStorage.getItem(key);
-            listTODO(key, val);
+        for ( var i = 0; i < localStorage.length; i++ ) {
+            var val = localStorage.getItem(i);
+            listTODO(i, val);
         }
     }
     
     function insertTODO(description) {
-        localStorage.setItem(localStorage.length, description);
-        listTODO(localStorage.length, description);
+        var key = localStorage.length;
+        localStorage.setItem(key, description);
+        listTODO(key, description);
     }
     
     noteForm.onsubmit = function() {
