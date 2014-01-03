@@ -72,18 +72,19 @@ window.onload = function() {
         appendChild(del, createTextNode('x'));
         setAttribute(del,'title','Delete this todo item');
         del.onclick = function() {
-            if ( confirm("Delete this todo item?") ) {
-                for (var i = id + 1; i < localStorage.length; i++) {
-                    localStorage.setItem(i - 1, localStorage.getItem(i));
-                }
-                localStorage.removeItem(localStorage.length - 1);
-                ul.removeChild(li);
-                var note=$('note_'+id);
-                note.parentNode.removeChild(note);
+            li.id = 'todeleteli';
+            var note = $('note_'+id);
+            note.id = 'todeletenote';
+            for (var i = id + 1; i < localStorage.length; i++) {
+                localStorage.setItem(i - 1, localStorage.getItem(i));
+                document.getElementById('input_'+i).id = 'input_'+(i-1);
+                document.getElementById('note_'+i).id = 'note_'+(i-1);
             }
+            localStorage.removeItem(localStorage.length - 1);
+            ul.removeChild(li);
+            note.parentNode.removeChild(note);
             return false;
         }
-        
         return del;
     }
     
