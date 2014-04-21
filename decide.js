@@ -116,7 +116,7 @@ window.onload = function() {
                     input = createElement('input');
                 setAttribute(input,'id', 'input_'+id);
                 // load text value from dom (relies on innerHTML)
-                input.value = items[i].innerText;
+                input.value = items[i].innerHTML;
                 var del = createDeleteLink(editList,li,id);
                 appendChild(li,input);
                 appendChild(li,del);
